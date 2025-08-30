@@ -51,7 +51,7 @@ To run this project, you need to have Python and the necessary libraries install
     ```
     jupyter notebook
     ```
-3.  **Run the cells:** Open the `unt.ipynb` notebook and run each cell sequentially. The notebook is structured to guide you through the data processing, model training, and evaluation steps.
+3.  **Run the cells:** Open the `sentiment_analysis_of_twitter_data.ipynb` notebook and run each cell sequentially. The notebook is structured to guide you through the data processing, model training, and evaluation steps.
 
 ### Project Structure
 
@@ -69,7 +69,7 @@ Sentiment-Analysis-of-Tweets/
 This project was a valuable lesson in the importance of strategic problem-solving over brute force.
 
   * **Challenge:** The initial model, trained on raw data, achieved an accuracy of only **32%**. I quickly identified that this was due to the large number of target classes (13 emotions) and the severe class imbalance in the dataset.
-  
+
   * **Solution:** I chose not to rely on just oversampling techniques like SMOTE, which did not improve performance. Instead, I implemented a custom solution by **aggregating the 13 fine-grained emotions into three broader categories: `positive`, `negative`, and `ambiguous`**. This simplified the problem and was the most impactful step of the project. I also corrected for a small training set by using a standard 80/20 split and resolved a `ConvergenceWarning` by increasing the model's `max_iter` parameter.
 
   * **Key Learnings:** This process taught me that thoughtful data preparation and feature engineering are often more crucial than the choice of model. A smaller, more logical set of classes can lead to far better results. It also reinforced the importance of adhering to best practices to create a clean, reproducible, and professional project.
